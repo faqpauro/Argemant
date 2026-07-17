@@ -1,32 +1,6 @@
 // src/data/noticias.ts
 export const noticias = [
     {
-      id: 1,
-      titulo: "Éxito total en el Congreso 2025",
-      fecha: "15 Oct 2024",
-      categoria: "Eventos",
-      imagen: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=800&fit=crop",
-      resumen: "Más de 200 profesionales se reunieron para debatir el futuro de la gestión de activos.",
-      contenido: `
-        <p>El Congreso ARGEMANT 2025 ha marcado un hito en la historia de la gestión de activos en la región. Con una asistencia récord, los profesionales pudieron disfrutar de tres días intensos de capacitación y networking.</p>
-        <h3>Puntos destacados</h3>
-        <p>Entre los temas más debatidos estuvo la implementación de la Inteligencia Artificial en el mantenimiento predictivo y las nuevas actualizaciones de la norma ISO 55001.</p>
-        <p>Agradecemos a todos los sponsors que hicieron esto posible y los esperamos en la edición 2026 con muchas más novedades.</p>
-      `
-    },
-    {
-      id: 2,
-      titulo: "Nueva certificación ISO 55001",
-      fecha: "02 Nov 2024",
-      categoria: "Normativas",
-      imagen: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&fit=crop",
-      resumen: "Empresas líderes del sector energético logran la certificación internacional.",
-      contenido: `
-        <p>Es un orgullo anunciar que cinco nuevas empresas del sector energético han logrado certificar su sistema de gestión de activos bajo la norma ISO 55001 este mes.</p>
-        <p>Este logro demuestra el compromiso de la industria nacional con la excelencia y la sostenibilidad a largo plazo. Desde ARGEMANT seguimos apoyando estos procesos con nuestra mesa de ayuda técnica.</p>
-      `
-    },
-    {
       id: 3,
       titulo: "Abierta la inscripción 2026",
       fecha: "10 Ene 2025",
@@ -43,6 +17,32 @@ export const noticias = [
             <li>Coffee breaks y almuerzos ejecutivos</li>
         </ul>
         <p>No te quedes afuera del evento más relevante del año.</p>
+      `
+    },
+    {
+      id: 2,
+      titulo: "Nueva certificación ISO 55001",
+      fecha: "02 Nov 2024",
+      categoria: "Normativas",
+      imagen: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&fit=crop",
+      resumen: "Empresas líderes del sector energético logran la certificación internacional.",
+      contenido: `
+        <p>Es un orgullo anunciar que cinco nuevas empresas del sector energético han logrado certificar su sistema de gestión de activos bajo la norma ISO 55001 este mes.</p>
+        <p>Este logro demuestra el compromiso de la industria nacional con la excelencia y la sostenibilidad a largo plazo. Desde ARGEMANT seguimos apoyando estos procesos con nuestra mesa de ayuda técnica.</p>
+      `
+    },
+    {
+      id: 1,
+      titulo: "Éxito total en el Congreso 2025",
+      fecha: "15 Oct 2024",
+      categoria: "Eventos",
+      imagen: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=800&fit=crop",
+      resumen: "Más de 200 profesionales se reunieron para debatir el futuro de la gestión de activos.",
+      contenido: `
+        <p>El Congreso ARGEMANT 2025 ha marcado un hito en la historia de la gestión de activos en la región. Con una asistencia récord, los profesionales pudieron disfrutar de tres días intensos de capacitación y networking.</p>
+        <h3>Puntos destacados</h3>
+        <p>Entre los temas más debatidos estuvo la implementación de la Inteligencia Artificial en el mantenimiento predictivo y las nuevas actualizaciones de la norma ISO 55001.</p>
+        <p>Agradecemos a todos los sponsors que hicieron esto posible y los esperamos en la edición 2026 con muchas más novedades.</p>
       `
     }
   ];

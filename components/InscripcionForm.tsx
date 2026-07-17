@@ -15,27 +15,26 @@ export default function InscripcionForm() {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-      // Aquí podrías redirigir o limpiar el formulario
     }, 2000);
   }
 
   if (isSuccess) {
     return (
-      <div className="bg-green-500/10 border border-green-500/30 rounded-2xl p-8 text-center animate-in fade-in zoom-in duration-300">
-        <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-green-500/20">
+      <div className="bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/25 rounded-3xl p-8 text-center animate-in fade-in zoom-in duration-500">
+        <div className="w-16 h-16 bg-gradient-to-tr from-emerald-600 to-teal-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-emerald-500/20">
           <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-white mb-2">¡Solicitud Enviada!</h3>
-        <p className="text-gray-300">
-          Hemos recibido tus datos correctamente. Te contactaremos a la brevedad para confirmar tu cupo.
+        <h3 className="text-2xl font-black text-slate-800 dark:text-white mb-3">¡Pre-Inscripción Enviada!</h3>
+        <p className="text-slate-600 dark:text-slate-300 max-w-md mx-auto leading-relaxed text-sm">
+          Hemos registrado tus datos correctamente en el sistema de admisión. Un asesor se contactará contigo en breve para coordinar los métodos de pago y confirmar tu cupo.
         </p>
         <button 
           onClick={() => setIsSuccess(false)}
-          className="mt-6 text-green-400 hover:text-green-300 font-medium underline"
+          className="mt-8 text-blue-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-300 font-extrabold text-sm uppercase tracking-wider underline underline-offset-4"
         >
-          Enviar otra inscripción
+          Enviar otra pre-inscripción
         </button>
       </div>
     );
@@ -45,109 +44,109 @@ export default function InscripcionForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       
       {/* GRID DE 2 COLUMNAS */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         
         {/* Nombre */}
         <div className="space-y-2">
-          <label htmlFor="nombre" className="text-sm font-medium text-gray-400 block">Nombre</label>
+          <label htmlFor="nombre" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-405 block">Nombre</label>
           <input 
             type="text" 
             id="nombre" 
             name="nombre"
-            className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-600"
+            className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 text-slate-800 dark:text-white focus:outline-none focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/10 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-700 text-sm font-medium"
             placeholder="Tu nombre"
           />
         </div>
 
         {/* Apellidos (Obligatorio) */}
         <div className="space-y-2">
-          <label htmlFor="apellidos" className="text-sm font-medium text-gray-400 block">
-            Apellidos <span className="text-blue-500">*</span>
+          <label htmlFor="apellidos" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-405 block">
+            Apellidos <span className="text-blue-600 dark:text-cyan-400">*</span>
           </label>
           <input 
             type="text" 
             id="apellidos" 
             name="apellidos"
             required
-            className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-600"
+            className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 text-slate-800 dark:text-white focus:outline-none focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/10 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-700 text-sm font-medium"
             placeholder="Tus apellidos"
           />
         </div>
 
         {/* Ciudad */}
         <div className="space-y-2">
-          <label htmlFor="ciudad" className="text-sm font-medium text-gray-400 block">Ciudad</label>
+          <label htmlFor="ciudad" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-405 block">Ciudad</label>
           <input 
             type="text" 
             id="ciudad" 
             name="ciudad"
-            className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-600"
+            className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 text-slate-800 dark:text-white focus:outline-none focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/10 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-700 text-sm font-medium"
             placeholder="Ej: Buenos Aires"
           />
         </div>
 
         {/* País (Obligatorio) */}
         <div className="space-y-2">
-          <label htmlFor="pais" className="text-sm font-medium text-gray-400 block">
-            País <span className="text-blue-500">*</span>
+          <label htmlFor="pais" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-405 block">
+            País <span className="text-blue-600 dark:text-cyan-400">*</span>
           </label>
           <input 
             type="text" 
             id="pais" 
             name="pais"
             required
-            className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-600"
+            className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 text-slate-800 dark:text-white focus:outline-none focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/10 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-700 text-sm font-medium"
             placeholder="Tu país de residencia"
           />
         </div>
 
         {/* Email (Obligatorio) */}
-        <div className="space-y-2 md:col-span-1">
-          <label htmlFor="email" className="text-sm font-medium text-gray-400 block">
-            Correo electrónico <span className="text-blue-500">*</span>
+        <div className="space-y-2">
+          <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-405 block">
+            Correo electrónico <span className="text-blue-600 dark:text-cyan-400">*</span>
           </label>
           <input 
             type="email" 
             id="email" 
             name="email"
             required
-            className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-600"
+            className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 text-slate-800 dark:text-white focus:outline-none focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/10 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-700 text-sm font-medium"
             placeholder="nombre@empresa.com"
           />
         </div>
 
         {/* Teléfono */}
-        <div className="space-y-2 md:col-span-1">
-          <label htmlFor="telefono" className="text-sm font-medium text-gray-400 block">Teléfono</label>
+        <div className="space-y-2">
+          <label htmlFor="telefono" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-405 block">Teléfono</label>
           <input 
             type="tel" 
             id="telefono" 
             name="telefono"
-            className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-600"
+            className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 text-slate-800 dark:text-white focus:outline-none focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/10 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-700 text-sm font-medium"
             placeholder="+54 11 ..."
           />
         </div>
 
         {/* Puesto */}
         <div className="space-y-2">
-          <label htmlFor="puesto" className="text-sm font-medium text-gray-400 block">Puesto</label>
+          <label htmlFor="puesto" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-405 block">Puesto / Cargo</label>
           <input 
             type="text" 
             id="puesto" 
             name="puesto"
-            className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-600"
+            className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 text-slate-800 dark:text-white focus:outline-none focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/10 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-700 text-sm font-medium"
             placeholder="Ej: Gerente de Mantenimiento"
           />
         </div>
 
         {/* Compañía */}
         <div className="space-y-2">
-          <label htmlFor="compania" className="text-sm font-medium text-gray-400 block">Compañía</label>
+          <label htmlFor="compania" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-405 block">Compañía / Empresa</label>
           <input 
             type="text" 
             id="compania" 
             name="compania"
-            className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-600"
+            className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 text-slate-800 dark:text-white focus:outline-none focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/10 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-700 text-sm font-medium"
             placeholder="Nombre de la empresa"
           />
         </div>
@@ -156,13 +155,13 @@ export default function InscripcionForm() {
 
       {/* Descripción (Full Width) */}
       <div className="space-y-2">
-        <label htmlFor="descripcion" className="text-sm font-medium text-gray-400 block">Descripción / Comentarios</label>
+        <label htmlFor="descripcion" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-405 block">Descripción / Comentarios adicionales</label>
         <textarea 
           id="descripcion" 
           name="descripcion"
           rows={4}
-          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-slate-600 resize-none"
-          placeholder="¿Tienes alguna consulta específica o requerimiento especial?"
+          className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 text-slate-800 dark:text-white focus:outline-none focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/10 transition-all text-sm font-medium placeholder:text-slate-400 dark:placeholder:text-slate-700 resize-none"
+          placeholder="¿Tienes alguna consulta específica o requerimiento especial de facturación?"
         ></textarea>
       </div>
 
@@ -170,10 +169,10 @@ export default function InscripcionForm() {
       <button 
         type="submit" 
         disabled={isSubmitting}
-        className={`w-full py-4 rounded-full font-bold text-lg transition-all transform shadow-lg ${
+        className={`w-full py-4 rounded-full font-extrabold text-lg transition-all duration-300 transform shadow-lg ${
             isSubmitting 
-                ? "bg-slate-700 text-gray-400 cursor-not-allowed" 
-                : "bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white hover:scale-[1.01] hover:shadow-blue-500/25"
+                ? "bg-slate-300 text-slate-500 dark:bg-slate-800 dark:text-slate-500 cursor-not-allowed border border-slate-200 dark:border-slate-700/50" 
+                : "bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white hover:scale-[1.01] shadow-[0_0_20px_rgba(37,99,235,0.25)] dark:shadow-[0_0_30px_rgba(37,99,235,0.5)]"
         }`}
       >
         {isSubmitting ? (
@@ -182,13 +181,13 @@ export default function InscripcionForm() {
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                Procesando...
+                Procesando pre-inscripción...
             </span>
-        ) : "Confirmar Pre-Inscripción"}
+        ) : "Confirmar Pre-Inscripción 2026"}
       </button>
 
-      <p className="text-center text-xs text-slate-500 mt-4">
-        Los campos marcados con <span className="text-blue-500">*</span> son obligatorios.
+      <p className="text-center text-xs text-slate-500 mt-4 font-semibold">
+        Los campos marcados con <span className="text-blue-600 dark:text-cyan-400">*</span> son obligatorios para validar el cupo.
       </p>
 
     </form>
