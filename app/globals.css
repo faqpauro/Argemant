@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc; /* Default light slate-50 background */
+  --foreground: #0f172a; /* Default light slate-900 text */
+  --blue-glow: rgba(59, 130, 246, 0.06);
+}
+
+.dark {
+  --background: #030712; /* Default dark slate-950 background */
+  --foreground: #f3f4f6; /* Default dark slate-100 text */
+  --blue-glow: rgba(59, 130, 246, 0.15);
 }
 
 @theme inline {
@@ -12,17 +21,31 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  border: 2px solid var(--background);
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
 }
 
 @keyframes infinite-scroll {
@@ -35,10 +58,37 @@ body {
 }
 
 .animate-infinite-scroll {
-  animation: infinite-scroll 60s linear infinite; /* 60s para que sea suave */
+  animation: infinite-scroll 60s linear infinite;
 }
 
-/* Opcional: Pausar la animación si pasas el mouse por encima */
 .animate-infinite-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Float animation for cards */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Glow pulse animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--blue-glow);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
+  }
+}
+
+.animate-glow {
+  animation: pulse-glow 3s infinite;
 }

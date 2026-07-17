@@ -1,39 +1,43 @@
 // src/app/blog/page.tsx
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
-import Link from "next/link"; // <--- Importante: Asegúrate de importar Link
+import Link from "next/link";
 import { noticias } from "@/data/noticias";
+import Sponsors from "@/components/Sponsors";
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-slate-950 pt-24 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-44 pb-20 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-500">
+      
+      {/* Glow ambiental de fondo */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/5 dark:bg-blue-900/10 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/5 dark:bg-cyan-900/10 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Encabezado */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Novedades <span className="text-blue-500">Argemant</span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Todas las actualizaciones sobre conferencias, normativa ISO y gestión de activos.
+          <p className="text-blue-600 dark:text-cyan-400 font-bold tracking-[0.25em] uppercase text-xs mb-3">
+            Actualidad y Conocimiento
           </p>
+          <h1 className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tight">
+            Novedades <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-900 dark:from-blue-400 dark:via-cyan-300 dark:to-blue-400">Argemant</span>
+          </h1>
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            Todas las actualizaciones sobre conferencias, normativa ISO 55000, gestión de activos y mantenimiento industrial.
+          </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto mt-6 rounded-full"></div>
         </div>
 
         {/* Grid de Noticias */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {noticias.map((post) => (
-            /* CAMBIO CLAVE:
-               1. Usamos <Link> como contenedor principal.
-               2. Agregamos la clase "group" para manejar efectos hover en los hijos.
-               3. Agregamos hover:translate-y para que la tarjeta "flote" al pasar el mouse.
-            */
             <Link 
               key={post.id} 
               href={`/blog/${post.id}`}
-              className="group block bg-slate-900 rounded-2xl overflow-hidden shadow-xl border border-slate-800 hover:border-blue-500/50 hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-300"
+              className="group block bg-white/75 dark:bg-slate-900/40 backdrop-blur-md rounded-3xl overflow-hidden border border-slate-300 dark:border-slate-800/85 hover:border-blue-500/50 hover:shadow-xl dark:hover:shadow-[0_0_25px_rgba(59,130,246,0.15)] shadow-md shadow-slate-200/40 hover:-translate-y-2 transition-all duration-300"
             >
               
-              {/* Imagen con efecto Zoom al hacer hover en la tarjeta (gracias a 'group') */}
+              {/* Imagen con efecto Zoom al hacer hover en la tarjeta */}
               <div className="relative h-56 w-full overflow-hidden">
                 <Image 
                   src={post.imagen} 
@@ -41,24 +45,26 @@ export default function BlogPage() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                  {post.categoria}
+                </div>
               </div>
 
               <div className="p-8">
-                <span className="text-blue-400 text-sm font-bold uppercase tracking-wider">
-                  {post.categoria}
-                </span>
+                <div className="text-slate-500 dark:text-slate-400 text-xs font-semibold mb-3 flex items-center gap-1.5">
+                  <span>📅 {post.fecha}</span>
+                </div>
                 
-                {/* Título cambia de color al pasar el mouse por CUALQUIER parte de la tarjeta */}
-                <h2 className="text-2xl font-bold mt-2 mb-4 group-hover:text-blue-400 transition-colors">
+                {/* Título cambia de color al pasar el mouse */}
+                <h2 className="text-xl font-bold mb-4 leading-snug text-slate-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                   {post.titulo}
                 </h2>
                 
-                <p className="text-gray-400 mb-6 line-clamp-3">
+                <p className="text-slate-650 dark:text-slate-400 text-sm mb-6 line-clamp-3 leading-relaxed">
                   {post.resumen}
                 </p>
                 
-                {/* Cambiamos <button> por <span> para evitar errores de HTML inválido dentro de un Link */}
-                <span className="text-white border-b-2 border-blue-500 pb-1 group-hover:text-blue-400 group-hover:border-blue-400 transition-colors inline-flex items-center gap-2">
+                <span className="text-blue-600 dark:text-cyan-400 border-b-2 border-blue-500/30 dark:border-cyan-500/30 pb-1 group-hover:text-blue-800 dark:group-hover:text-cyan-300 group-hover:border-blue-500 dark:group-hover:border-cyan-300 transition-all inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
                   Leer artículo completo 
                   <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                 </span>
@@ -66,8 +72,9 @@ export default function BlogPage() {
             </Link>
           ))}
         </div>
-
       </div>
+      {/* Sponsors oficiales de cierre */}
+      <Sponsors />
     </main>
   );
 }
