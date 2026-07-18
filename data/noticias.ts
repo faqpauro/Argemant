@@ -1,6 +1,26 @@
 // src/data/noticias.ts
 export const noticias = [
     {
+      id: 4,
+      titulo: "Sponsors: ya pueden ser parte del próximo Congreso ARGEMANT",
+      fecha: "18 Jul 2026",
+      categoria: "Sponsors",
+      imagen: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&fit=crop",
+      resumen: "Abrimos la convocatoria para que empresas y organizaciones acompañen la próxima edición del Congreso ARGEMANT.",
+      contenido: `
+        <p>Ya está abierta la convocatoria para sponsors del próximo Congreso ARGEMANT. Invitamos a empresas, instituciones y marcas vinculadas con la gestión de activos, el mantenimiento y la innovación industrial a formar parte del encuentro.</p>
+        <h3>Una oportunidad para conectar con el sector</h3>
+        <p>Ser sponsor permite presentar soluciones, fortalecer el posicionamiento de marca y generar vínculos con profesionales, especialistas y referentes de las principales industrias.</p>
+        <ul>
+            <li>Presencia de marca durante el Congreso</li>
+            <li>Contacto directo con profesionales y empresas</li>
+            <li>Participación en un espacio de networking especializado</li>
+            <li>Opciones de patrocinio adaptadas a distintos objetivos</li>
+        </ul>
+        <p>Las empresas interesadas ya pueden contactarse con la organización para conocer las propuestas disponibles y reservar su participación.</p>
+      `
+    },
+    {
       id: 3,
       titulo: "Abierta la inscripción 2026",
       fecha: "10 Ene 2025",

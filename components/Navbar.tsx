@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { noticias } from "@/data/noticias";
 
 const navLinks = [
-  { name: "Inicio", href: "/#inicio" },
+  { name: "Home", href: "/#inicio" },
   { name: "Speakers", href: "/#speakers" },
   { name: "Noticias", href: "DYNAMIC" },
   { name: "Organizador", href: "/organizador" },

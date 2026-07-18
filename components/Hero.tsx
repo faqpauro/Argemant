@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden transition-colors duration-500">
+    <section id="inicio" className="relative min-h-screen pt-32 md:pt-36 pb-12 flex items-center justify-center bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white overflow-hidden transition-colors duration-500">
       
       {/* --- CAPA DE FONDO --- */}
       <div className="absolute inset-0 z-0">
@@ -51,7 +51,7 @@ export default function Hero() {
         {/* Párrafo descriptivo */}
         <p className="text-lg md:text-2xl text-slate-700 dark:text-slate-200 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
           El evento líder que reúne a los expertos de las mejores empresas. <br className="hidden md:inline"/>
-          Sede oficial del Comité Panamericano de Ingeniería de Mantenimiento (COPIMAN).
+          Dos jornadas de conocimiento, innovación y networking profesional.
         </p>
         
         {/* Botones */}
